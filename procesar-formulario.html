@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Enviado - VS Marketing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #3498DB;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .confirmation-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            background-color: #f5f6fa;
+        }
+
+        .confirmation-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .confirmation-icon {
+            color: #2ecc71;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-text {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .details-box {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .details-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .back-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="principal.html" class="logo">VS Marketing</a>
+            <div class="nav-links">
+                <a href="principal.html">Inicio</a>
+                <a href="principal.html#servicios">Servicios</a>
+                <a href="principal.html#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="confirmation-container">
+        <div class="confirmation-box">
+            <i class="fas fa-check-circle confirmation-icon"></i>
+            <h1 class="confirmation-title">¡Mensaje Enviado!</h1>
+            <p class="confirmation-text">Gracias por contactar con nosotros. Responderemos a tu mensaje lo antes posible.</p>
+            
+            <div class="details-box">
+                <h3>Datos enviados:</h3>
+                <div id="formData"></div>
+            </div>
+
+            <a href="principal.html" class="back-button">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener parámetros de la URL
+        function getUrlParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const params = {};
+            urlParams.forEach((value, key) => {
+                params[key] = value;
+            });
+            return params;
+        }
+
+        // Función para mostrar los datos del formulario
+        function displayFormData() {
+            const params = getUrlParameters();
+            const formDataDiv = document.getElementById('formData');
+            
+            if (Object.keys(params).length > 0) {
+                let html = '';
+                if (params.name) html += `<p><strong>Nombre:</strong> ${params.name}</p>`;
+                if (params.email) html += `<p><strong>Email:</strong> ${params.email}</p>`;
+                if (params.message) html += `<p><strong>Mensaje:</strong> ${params.message}</p>`;
+                formDataDiv.innerHTML = html;
+            }
+             else {
+                formDataDiv.innerHTML = '<p>No se recibieron datos del formulario.</p>';
+            }
+        }
+
+        // Ejecutar cuando la página cargue
+        window.onload = displayFormData;
+    </script>
+</body>
+</html>

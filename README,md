@@ -1,0 +1,64 @@
+Documentación de la Web - VS Marketing
+
+Descripción
+
+Esta es una plantilla de sitio web moderna y responsiva, ideal para negocios, agencias de marketing o proyectos personales. La plantilla incluye:
+
+  ·Una página de inicio atractiva.
+  ·Un formulario de contacto funcional.
+  ·Diseño responsivo que se adapta a dispositivos móviles, tabletas y computadoras.
+
+Contenido del Proyecto
+
+El archivo comprimido incluye los siguientes archivos y carpetas:
+·Principal.html: Página inicial de la web. 
+·Second.html: Página SEO de la web.
+·Md.hmtl: Página de Marketing Digital de la web.
+·AD.html: Página de Análisis de Datos de la web.
+·Procesar-formulario.html: Página de redirigimiento de el formulario de contacto de la web a una pantalla donde dice que el mensaje fue enviado
+·Formulario.php: Formulario PHP para el correcto funcionamiento de el mismo formulario.
+
+//Instrucciones para usar la plantilla //
+
+1. Configuración del Proyecto
+ ·Descarga y descomprime el archivo ZIP.
+ ·Abre la carpeta del proyecto en tu editor de código preferido (por ejemplo, Visual Studio Code).
+
+2. Visualización Local
+ ·Asegúrate de tener instalado PHP en tu sistema.
+ ·Abre una terminal en la carpeta del proyecto.
+
+Configuración del Formulario de Contacto
+
+El formulario de contacto es funcional y puede configurarse para enviar correos electrónicos.
+
+Pasos para Configurar el Envio de Correos:
+
+Abre el archivo formulario.php.
+
+Busca la siguiente sección del código:
+
+$destinatario = 'tu_correo@ejemplo.com'; // Cambia esto por tu correo
+
+Reemplaza tu_correo@ejemplo.com por la dirección de correo donde deseas recibir los mensajes.
+
+Guarda los cambios.
+
+Nota: Para que el envío de correos funcione, el servidor debe tener habilitado un programa de correo como sendmail (Linux) o usar herramientas como PHPMailer.
+
+Vista Previa en Vivo
+
+Puedes subir la plantilla a cualquier servidor web o servicio de hosting para una vista previa. Algunos servicios recomendados:
+
+Netlify
+
+GitHub Pages
+
+Licencia
+
+Esta plantilla se proporciona "tal cual" sin garantías de funcionalidad en todos los entornos. El comprador es responsable de personalizar y adaptar la plantilla según sus necesidades.
+
+Gracias por elegir nuestra plantilla. Si tienes preguntas, no dudes en contactarnos. ¡Disfruta de tu nuevo sitio web!
+
+
+

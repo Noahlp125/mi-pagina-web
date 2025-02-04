@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Marketing - Marketing Digital</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <a href="principal.html"></a>
+    <a  href="second.html"></a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #3498DB;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .marketing-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('/api/placeholder/1200/400') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .marketing-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .marketing-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .marketing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .marketing-feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .marketing-feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .marketing-feature i {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .marketing-feature h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .process-section {
+            background-color: #f5f6fa;
+            padding: 4rem 2rem;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .pricing-section {
+            padding: 4rem 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .marketing-hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="principal.html" class="logo">VS Marketing</a>
+            <div class="nav-links">
+                <a href="principal.html">Inicio</a>
+                <a href="principal.html#servicios">Servicios</a>
+                <a href="principal.html#contacto">Contacto</a>
+                <a  href="second.html">SEO</a>
+                <a href="AD.html">Análisis de Datos</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="marketing-hero">
+        <div class="marketing-hero-content">
+            <h1>Marketing Digital Estratégico</h1>
+            <p>Impulsa tu presencia online con estrategias personalizadas y resultados medibles</p>
+        </div>
+    </section>
+
+    <section class="marketing-content">
+        <div class="marketing-grid">
+            <div class="marketing-feature">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Social Media Marketing</h3>
+                <p>Gestión profesional de redes sociales y creación de contenido que conecta con tu audiencia.</p>
+            </div>
+            <div class="marketing-feature">
+                <i class="fas fa-ad"></i>
+                <h3>Publicidad Digital</h3>
+                <p>Campañas optimizadas en Google Ads, Facebook Ads e Instagram para maximizar tu ROI.</p>
+            </div>
+            <div class="marketing-feature">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Marketing</h3>
+                <p>Estrategias de email marketing personalizadas para nutrir y convertir leads.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <h2>Metodología de Trabajo</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Análisis de Mercado</h3>
+                    <p>Estudio de tu mercado y competencia</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Estrategia Digital</h3>
+                    <p>Desarrollo de plan personalizado</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Implementación</h3>
+                    <p>Lanzamiento de campañas optimizadas</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Optimización</h3>
+                    <p>Mejora continua basada en datos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h2>Planes de Marketing Digital</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Plan Starter</h3>
+                <div class="price">399€/mes</div>
+                <ul>
+                    <li>Gestión de 2 redes sociales</li>
+                    <li>4 posts semanales</li>
+                    <li>Informe mensual</li>
+                    <li>Campaña básica de ads</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Empezar Ahora</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Plan Business</h3>
+                <div class="price">799€/mes</div>
+                <ul>
+                    <li>Gestión de 4 redes sociales</li>
+                    <li>8 posts semanales</li>
+                    <li>Informes semanales</li>
+                    <li>Campañas avanzadas de ads</li>
+                    <li>Email marketing</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Empezar Ahora</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Plan Premium</h3>
+                <div class="price">1299€/mes</div>
+                <ul>
+                    <li>Gestión completa de RRSS</li>
+                    <li>Posts diarios</li>
+                    <li>Informes personalizados</li>
+                    <li>Estrategia omnicanal</li>
+                    <li>Consultor dedicado</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>VS Marketing</h3>
+                <p>Expertos en Marketing Digital</p>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>Email: info@vsmarketing.com</p>
+                <p>Teléfono: +34 900 123 456</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

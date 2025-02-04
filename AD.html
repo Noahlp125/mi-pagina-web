@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Marketing - Análisis de Datos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <a href="principal.html"></a>
+    <a href="second.html"></a>
+    <a href="md.html"></a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #3498DB;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .analytics-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('/api/placeholder/1200/400') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .analytics-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .analytics-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .analytics-feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .analytics-feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .analytics-feature i {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .analytics-feature h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .process-section {
+            background-color: #f5f6fa;
+            padding: 4rem 2rem;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .pricing-section {
+            padding: 4rem 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .analytics-hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="principal.html" class="logo">VS Marketing</a>
+            <div class="nav-links">
+                <a href="principal.html">Inicio</a>
+                <a href="principal.html#servicios">Servicios</a>
+                <a href="principal.html#contacto">Contacto</a>
+                <a  href="second.html">SEO</a>
+                <a href="md.html">Marketing Digital</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="analytics-hero">
+        <div class="analytics-hero-content">
+            <h1>Análisis de Datos Avanzado</h1>
+            <p>Convierte tus datos en decisiones estratégicas con análisis profesional</p>
+        </div>
+    </section>
+
+    <section class="analytics-content">
+        <div class="analytics-grid">
+            <div class="analytics-feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Análisis de Rendimiento</h3>
+                <p>Medición y análisis detallado del rendimiento de tus campañas digitales y KPIs clave.</p>
+            </div>
+            <div class="analytics-feature">
+                <i class="fas fa-users"></i>
+                <h3>Análisis de Audiencia</h3>
+                <p>Comprensión profunda de tu audiencia, comportamiento del usuario y segmentación avanzada.</p>
+            </div>
+            <div class="analytics-feature">
+                <i class="fas fa-chart-pie"></i>
+                <h3>Business Intelligence</h3>
+                <p>Dashboards personalizados y reportes automatizados para la toma de decisiones.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <h2>Proceso de Análisis</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Recopilación</h3>
+                    <p>Captura y organización de datos</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Procesamiento</h3>
+                    <p>Limpieza y preparación de datos</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Análisis</h3>
+                    <p>Interpretación y descubrimiento de insights</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Acción</h3>
+                    <p>Recomendaciones estratégicas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h2>Planes de Análisis</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Plan Básico</h3>
+                <div class="price">299€/mes</div>
+                <ul>
+                    <li>Configuración de Google Analytics</li>
+                    <li>Dashboard básico</li>
+                    <li>Informes mensuales</li>
+                    <li>3 KPIs principales</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Empezar Ahora</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Plan Profesional</h3>
+                <div class="price">599€/mes</div>
+                <ul>
+                    <li>Analytics avanzado</li>
+                    <li>Dashboard personalizado</li>
+                    <li>Informes semanales</li>
+                    <li>10 KPIs personalizados</li>
+                    <li>Análisis de competencia</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Empezar Ahora</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Plan Enterprise</h3>
+                <div class="price">999€/mes</div>
+                <ul>
+                    <li>BI personalizado</li>
+                    <li>Múltiples dashboards</li>
+                    <li>Reportes a medida</li>
+                    <li>KPIs ilimitados</li>
+                    <li>Análisis predictivo</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>VS Marketing</h3>
+                <p>Expertos en Análisis de Datos</p>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>Email: info@vsmarketing.com</p>
+                <p>Teléfono: +34 900 123 456</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

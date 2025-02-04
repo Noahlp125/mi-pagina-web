@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Marketing - Servicios SEO</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <a href="principal.html"></a>
+    <a href="md.html"></a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #2C3E50;
+            --secondary-color: #E74C3C;
+            --accent-color: #3498DB;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section específico para SEO */
+        .seo-hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('/api/placeholder/1200/400') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .seo-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contenido SEO */
+        .seo-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .seo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .seo-feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .seo-feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .seo-feature i {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .seo-feature h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* Sección de proceso */
+        .process-section {
+            background-color: #f5f6fa;
+            padding: 4rem 2rem;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Sección de precios */
+        .pricing-section {
+            padding: 4rem 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .seo-hero-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="principal.html" class="logo">VS Marketing</a>
+            <div class="nav-links">
+                <a href="principal.html">Inicio</a>
+                <a href="index.html#servicios">Servicios</a>
+                <a href="principal.html">Contacto</a>
+                <a href="md.html">Marketing Digital</a>
+                <a href="AD.html">Análisis de Datos</a>
+               
+
+            </div>
+        </nav>
+    </header>
+
+    <section class="seo-hero">
+        <div class="seo-hero-content">
+            <h1>Servicios SEO Profesionales</h1>
+            <p>Optimización para motores de búsqueda que impulsa tu visibilidad online</p>
+        </div>
+    </section>
+
+    <section class="seo-content">
+        <div class="seo-grid">
+            <div class="seo-feature">
+                <i class="fas fa-search"></i>
+                <h3>Auditoría SEO</h3>
+                <p>Análisis completo de tu sitio web para identificar áreas de mejora y oportunidades de optimización.</p>
+            </div>
+            <div class="seo-feature">
+                <i class="fas fa-keywords"></i>
+                <h3>Investigación de Keywords</h3>
+                <p>Identificación de palabras clave relevantes para tu negocio con alto potencial de conversión.</p>
+            </div>
+            <div class="seo-feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Optimización Técnica</h3>
+                <p>Mejora del rendimiento técnico de tu sitio web para cumplir con los estándares de Google.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="process-container">
+            <h2>Nuestro Proceso</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Análisis Inicial</h3>
+                    <p>Evaluación completa de tu presencia online actual</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Estrategia</h3>
+                    <p>Desarrollo de plan personalizado de SEO</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Implementación</h3>
+                    <p>Ejecución de las optimizaciones planificadas</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Seguimiento</h3>
+                    <p>Monitoreo y ajuste continuo de resultados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <h2>Planes y Precios</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Plan Básico</h3>
+                <div class="price">299€/mes</div>
+                <ul>
+                    <li>Auditoría SEO básica</li>
+                    <li>Optimización de 5 páginas</li>
+                    <li>Informe mensual</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Empezar Ahora</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Plan Profesional</h3>
+                <div class="price">599€/mes</div>
+                <ul>
+                    <li>Auditoría SEO completa</li>
+                    <li>Optimización de 15 páginas</li>
+                    <li>Informes semanales</li>
+                    <li>Soporte prioritario</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button" href="principal.html#contacto">Empezar Ahora</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Plan Enterprise</h3>
+                <div class="price">999€/mes</div>
+                <ul>
+                    <li>Auditoría SEO avanzada</li>
+                    <li>Optimización ilimitada</li>
+                    <li>Informes personalizados</li>
+                    <li>Consultor dedicado</li>
+                </ul>
+                <a href="principal.html#contacto" class="cta-button">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>VS Marketing</h3>
+                <p>Expertos en SEO y Marketing Digital</p>
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p>Email: info@vsmarketing.com</p>
+                <p>Teléfono: +34 900 123 456</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
